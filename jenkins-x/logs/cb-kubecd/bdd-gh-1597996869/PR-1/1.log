@@ -1,0 +1,175 @@
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-hzgdf[0m
+{"level":"info","ts":1597997788.1365438,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1597997788.1370192,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-5c6qv[0m
+{"level":"info","ts":1597997788.8239176,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1597997788.8258374,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-gh-1597996869-pr-rfk2q-wws8b[0m
+{"level":"info","ts":1597997820.1210706,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1597997821.4748943,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-gh-1597996869.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2,1:c83c214d7cff9a90691fdfb4ec80563bd1bdeae7
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow c83c214d7cff9a90691fdfb4ec80563bd1bdeae7: 7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2:
+DEBUG: ran git fetch --unshallow origin c83c214d7cff9a90691fdfb4ec80563bd1bdeae7: 7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2
+DEBUG: ran git reset --hard 7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge c83c214d7cff9a90691fdfb4ec80563bd1bdeae7
+DEBUG: ran git merge c83c214d7cff9a90691fdfb4ec80563bd1bdeae7 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 7ee0c241e3528c7f554c3a5fca9bf8b04a2c53f2..HEAD
+Merged SHA c83c214d7cff9a90691fdfb4ec80563bd1bdeae7 with commit message 'My first PR commit' into base branch master
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1597996869 main.go
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0821 08:17:09.659135      11 metadata.go:241] Failed to unmarshal scopes: json: cannot unmarshal string into Go value of type []string
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Built cross stage deps: map[]                
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Checking for cached layer gcr.io/jenkins-x-labs-bdd/cache:2d8f128b0d5a92bc347f26e5ae7ca31abecc2038111bba3b5ea705f02be10bc1... 
+[36mINFO[0m[0001] Using caching version of cmd: COPY ./bin/ /  
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] Resolving paths                              
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/bdd-gh-1597996869"]            
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Found cached layer, extracting to filesystem 
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/jenkins-x-labs-bdd\/bdd-gh-1597996869|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1597996869-pr-rfk2q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Created environment cb-kubecd-bdd-gh-1597996869-pr-1
+Namespace **-cb-kubecd-bdd-gh-1597996869-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 104.199.96.107.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/jenkins-x-labs-bdd/bdd-gh-1597996869
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+adding helm values file /workspace/source/charts/preview/**-values.yaml for namespace **-cb-kubecd-bdd-gh-1597996869-pr-1
+about to run: git clone https://github.com/jenkins-x-bot-test/**r-versions.git /tmp/080859410/jenkins-x-versions in dir /tmp/080859410
+Cloning into '/tmp/080859410/jenkins-x-versions'...
+about to run: git fetch origin ef178546bb5c2bf63899979f23c5a3859d4f27f1 in dir /tmp/080859410/jenkins-x-versions
+From https://github.com/jenkins-x-bot-test/**r-versions
+ * branch            ef178546bb5c2bf63899979f23c5a3859d4f27f1 -> FETCH_HEAD
+about to run: git branch -r in dir /tmp/080859410/jenkins-x-versions
+origin/HEAD -> origin/master
+  origin/bump-promote-version-01454e7c-e1f3-11ea-9047-3aaf7d5a33cb
+  origin/bump-promote-version-1bcf7832-e222-11ea-bb3a-4687d1445cd8
+  origin/bump-promote-version-3e4b0394-e381-11ea-a2a6-124849e0da6e
+  origin/bump-promote-version-4799b342-e302-11ea-9a46-a23ab2192a4b
+  origin/bump-promote-version-4bcccf92-e2c1-11ea-a8d1-169d1ea7a9e5
+  origin/bump-promote-version-5ffb700c-e2d0-11ea-86cc-eef2369253fb
+  origin/bump-promote-version-6607a161-e1d7-11ea-abcc-faa2ce16c3aa
+  origin/bump-promote-version-8816f218-e188-11ea-ba1a-8236da2581bb
+  origin/bump-promote-version-911afa67-e2c2-11ea-b815-6ea8b1ff819f
+  origin/bump-promote-version-a59eb269-e2f1-11ea-88f7-021bc512039d
+  origin/bump-promote-version-b567ed7c-e2b8-11ea-aa46-ea780e2ac00c
+  origin/bump-promote-version-d08f34b4-e2a8-11ea-900b-6e9a6e05b727
+  origin/bump-promote-version-e8b9a675-e37e-11ea-ace6-92b5953d9e33
+  origin/bump-regex-version-144d67e5-23f6-4208-88f0-350af1b4821f
+  origin/bump-regex-version-94b8d334-e2cc-11ea-b2de-16f0cfd81e5a
+  origin/bump-regex-version-a514191a-8f18-4dc1-8538-d69da060d671
+  origin/changes
+  origin/gh-pages
+  origin/jstrachan-patch-1
+  origin/jstrachan-patch-10
+  origin/jstrachan-patch-11
+  origin/jstrachan-patch-12
+  origin/jstrachan-patch-13
+  origin/jstrachan-patch-14
+  origin/jstrachan-patch-15
+  origin/jstrachan-patch-16
+  origin/jstrachan-patch-17
+  origin/jstrachan-patch-18
+  origin/jstrachan-patch-19
+  origin/jstrachan-patch-2
+  origin/jstrachan-patch-20
+  origin/jstrachan-patch-21
+  origin/jstrachan-patch-22
+  origin/jstrachan-patch-23
+  origin/jstrachan-patch-24
+  origin/jstrachan-patch-25
+  origin/jstrachan-patch-26
+  origin/jstrachan-patch-27
+  origin/jstrachan-patch-28
+  origin/jstrachan-patch-29
+  origin/jstrachan-patch-3
+  origin/jstrachan-patch-30
+  origin/jstrachan-patch-31
+  origin/jstrachan-patch-32
+  origin/jstrachan-patch-33
+  origin/jstrachan-patch-34
+  origin/jstrachan-patch-35
+  origin/jstrachan-patch-36
+  origin/jstrachan-patch-37
+  origin/jstrachan-patch-38
+  origin/jstrachan-patch-39
+  origin/jstrachan-patch-4
+  origin/jstrachan-patch-5
+  origin/jstrachan-patch-6
+  origin/jstrachan-patch-7
+  origin/jstrachan-patch-8
+  origin/jstrachan-patch-9
+  origin/**v3v4
+  origin/master
+about to run: git checkout FETCH_HEAD in dir /tmp/080859410/jenkins-x-versions
+Note: checking out 'FETCH_HEAD'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at ef17854 chore(deps): bump https://github.com/jenkins-x/**-cli to 3.0.34
+about to run: git fetch --tags in dir /tmp/080859410/jenkins-x-versions
+about to run: git describe ef178546bb5c2bf63899979f23c5a3859d4f27f1 --abbrev=0 --contains in dir /tmp/080859410/jenkins-x-versions
+fatal: cannot describe 'ef178546bb5c2bf63899979f23c5a3859d4f27f1'
+Updating PipelineActivities cb-kubecd-bdd-gh-1597996869-pr-1-1 which has status Running
+WARNING: preview application http://bdd-gh-1597996869-**-cb-kubecd-bdd-gh-1597996869-pr-1.104.199.96.107.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 818.058174ms
+Preview application is now available at: http://bdd-gh-1597996869-**-cb-kubecd-bdd-gh-1597996869-pr-1.104.199.96.107.nip.io
